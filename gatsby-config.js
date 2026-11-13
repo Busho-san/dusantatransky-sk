@@ -1,4 +1,6 @@
 module.exports = {
+  // Použije sa len pri `gatsby build --prefix-paths` (preview na GitHub Pages)
+  pathPrefix: `/dusantatransky-sk`,
   siteMetadata: {
     title: `Dušan Tatranský | Marketing, kreativita a AI školenia pre firmy`,
     description: `Creative & Strategy Director v Promiseo, 15+ rokov v marketingu. Praktické AI workshopy pre firmy a marketingové tímy na Slovensku, u vás vo firme alebo online.`,

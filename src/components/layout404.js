@@ -1,3 +1,4 @@
+import { withPrefix } from "gatsby"
 import React from "react"
 
 import { PageShell, Section, Buttons, Button, Contact } from "./blocks"
@@ -9,7 +10,7 @@ const Layout404 = () => (
       <h2 style={{ paddingTop: 120 }}>Ooops! Stránka sa nenašla</h2>
       <img src={not_found} alt="" style={{ maxWidth: 500 }} />
       <Buttons>
-        <Button href="/">Späť na úvod →</Button>
+        <Button href={withPrefix("/")}>Späť na úvod →</Button>
       </Buttons>
     </Section>
     <Contact />

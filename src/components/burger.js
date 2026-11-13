@@ -1,6 +1,7 @@
 import { slide as Menu } from "react-burger-menu"
 import React from "react"
 import styled from "styled-components"
+import { withPrefix } from "gatsby"
 
 
 // import Social from "./social"
@@ -278,11 +279,11 @@ export const SubstackIcon = () => (
 )
 
 const links = [
-  { href: "/#workshopy", label: "Workshopy" },
-  { href: "/#o-mne", label: "O mne" },
-  { href: "/#co-si-myslim", label: "Čo si myslím" },
-  { href: "/#kde-ma-bolo-vidiet", label: "Kde ma bolo vidieť" },
-  { href: "/#bushido", label: "Bushido" },
+  { href: withPrefix("/") + "#workshopy", label: "Workshopy" },
+  { href: withPrefix("/") + "#o-mne", label: "O mne" },
+  { href: withPrefix("/") + "#co-si-myslim", label: "Čo si myslím" },
+  { href: withPrefix("/") + "#kde-ma-bolo-vidiet", label: "Kde ma bolo vidieť" },
+  { href: withPrefix("/") + "#bushido", label: "Bushido" },
 ]
 
 class Burger extends React.Component {
@@ -320,7 +321,7 @@ class Burger extends React.Component {
           >
             <SubstackIcon />
           </a>
-          <a className="nav_button" href="/#workshopy">
+          <a className="nav_button" href={withPrefix("/") + "#workshopy"}>
             Workshopy
           </a>
         </TopActions>

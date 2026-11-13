@@ -2,6 +2,7 @@
 // zvislé meno), sekcie používajú bloky z blocks.js.
 import React from "react"
 import styled from "styled-components"
+import { withPrefix } from "gatsby"
 
 import GlitchImage from "./glitchImage"
 import { LinkedInIcon } from "./burger"
@@ -208,7 +209,7 @@ const Workshopy = () => (
       </p>
       <Buttons>
         <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
-        <UnderLink href="/workshopy">Podrobnosti o workshopoch</UnderLink>
+        <UnderLink href={withPrefix("/workshopy")}>Podrobnosti o workshopoch</UnderLink>
       </Buttons>
     </Rule>
   </Section>
