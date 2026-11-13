@@ -1,96 +1,61 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description, lang, meta, keywords, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-  
-  const metaDescription = description || site.siteMetadata.description
+import { SITE_URL, LINKS } from "../data/links"
+
+// title: celý <title> (bez šablóny), path: cesta stránky pre canonical,
+// enUrl: zodpovedajúca anglická stránka na .com (hreflang)
+function SEO({ title, description, path, enUrl, jsonLd, noindex }) {
+  const url = SITE_URL + path
+  const image = SITE_URL + "/og-image.png"
+  const meta = [
+    { name: "description", content: description },
+    { property: "og:title", content: title },
+    { property: "og:description", content: description },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: url },
+    { property: "og:image", content: image },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:locale", content: "sk_SK" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: title },
+    { name: "twitter:description", content: description },
+    { name: "twitter:image", content: image },
+  ]
+  if (noindex) meta.push({ name: "robots", content: "noindex" })
+
+  const link = noindex
+    ? []
+    : [
+        { rel: "canonical", href: url },
+        { rel: "alternate", hrefLang: "sk", href: url },
+        { rel: "alternate", hrefLang: "en", href: enUrl || LINKS.en },
+        { rel: "alternate", hrefLang: "x-default", href: LINKS.en },
+      ]
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`${site.siteMetadata.title} | %s`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat(
-        keywords.length > 0
-          ? {
-              name: `keywords`,
-              content: keywords.join(`, `),
-            }
-          : []
-      )
-      .concat(meta)}
-    />
+    <Helmet htmlAttributes={{ lang: "sk" }} title={title} meta={meta} link={link}>
+      {jsonLd && (
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      )}
+    </Helmet>
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
+  path: "/",
+  description: "",
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  path: PropTypes.string,
+  enUrl: PropTypes.string,
+  jsonLd: PropTypes.object,
+  noindex: PropTypes.bool,
 }
 
 export default SEO

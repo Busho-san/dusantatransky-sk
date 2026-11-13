@@ -1,173 +1,89 @@
-/**
- * Layout component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
+// Homepage: hero + sekcie. Hero preberá pôvodný úvod (avatar, glitch fotka,
+// zvislé meno), sekcie používajú bloky z blocks.js.
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
 
-import Burger from "./burger"
-import Footer from "./footerHome"
-import FooterNarrow from "./footerHomeNarrow"
 import GlitchImage from "./glitchImage"
-import Avatar from "./avatar"
+import { LinkedInIcon } from "./burger"
+import {
+  PageShell,
+  Section,
+  BlokRight,
+  Rule,
+  Tag,
+  Buttons,
+  Button,
+  UnderLink,
+  ProofStrip,
+  Contact,
+} from "./blocks"
+import { LINKS } from "../data/links"
+import upcoming from "../data/upcoming.json"
 
 import dusanstvo_landing from "../images/dusanstvo_landing.jpg"
+import dusanstvo_sluzby from "../images/dusanstvo_sluzby.jpg"
 import dusanstvo_omne from "../images/dusanstvo_omne.jpg"
-import dusanstvo_otebe from "../images/dusanstvo_otebe.jpg"
-import arrow from "../images/arrow.svg"
-// import home_text from "../images/home_text.png"
 
-const PageWrapper = styled.div`
+/* ---------- hero (z pôvodného layout.js) ---------- */
+
+const WelcomeWrapper = styled.header`
+  display: flex;
   width: 100vw;
-  position: relative;
+  min-height: 100vh;
   overflow: hidden;
+  position: relative;
+  align-items: center;
+  background: var(--white);
+  @media (max-width: 800px) {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+  }
+`
+
+const HeroText = styled.div`
+  position: relative;
+  z-index: 3;
+  width: 50%;
+  padding: 200px 50px 120px 260px;
+  .eyebrow {
+    margin-bottom: 30px;
+  }
   h1.headlines {
-    cursor: pointer !important;
-    &:hover {
-      color: var(--black);
-      -webkit-text-stroke: 0px;
-    }
-    &.home_1_hovered,
-    &.home_2_hovered {
-      opacity: 1 !important;
-      color: var(--orange);
-      -webkit-text-stroke: 1px var(--white);
-    }
+    text-align: left;
+    font-size: 90px;
+    margin-bottom: 40px;
+  }
+  .lead {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 560px;
+  }
+  .roles {
+    margin-top: 24px;
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.9;
+    max-width: 560px;
   }
   @media (min-width: 1600px) {
     h1.headlines {
       font-size: 130px;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1300px) {
+    padding-left: 120px;
     h1.headlines {
-      position: relative;
-      text-align: left;
-      padding-left: 25px;
-      display: inline-block;
-      font-size: 9vw;
-      &:after {
-        position: absolute;
-        content: "";
-        display: inline-block;
-        right: -30px;
-        top: 5px;
-        width: 20px;
-        height: 100%;
-        background: url(${arrow});
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-position: center center;
-      }
+      font-size: 72px;
     }
   }
-  @media (max-width: 400px) {
+  @media (max-width: 800px) {
+    width: 100%;
+    padding: 180px 25px 60px;
     h1.headlines {
-      &:after {
-        top: 2px;
-        background-size: 80% 80%;
-      }
-    }
-  }
-`
-const WelcomeWrapper = styled.div`
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 800px) {
-    align-items: flex-start;
-  }
-`
-const BurgerWrapper = styled.div`
-  position: fixed;
-  width: 100vw;
-  height: 30px;
-  top: 0;
-  right: 0;
-  z-index: 99999;
-`
-const Menu = styled.div`
-  display: block;
-  position: relative;
-  z-index: 3;
-  a {
-    position: relative;
-    display: block;
-  }
-  .home_1_img.hovered {
-    opacity: 1;
-    display: block;
-    position: absolute;
-    width: 400px;
-    left: 50%;
-    top: -150px;
-    margin-left: -200px;
-  }
-  .home_2_img.hovered {
-    opacity: 1;
-    display: block;
-    position: absolute;
-    width: 400px;
-    left: 50%;
-    top: -150px;
-    margin-left: -200px;
-  }
-  .link_wrapper_hovered h1 {
-    opacity: 0.3;
-  }
-  .text_hide {
-    opacity: 0;
-    animation: text_hide 0.3s linear;
-  }
-  @keyframes text_hide {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  @media (max-width: 500px) {
-    .text_hide {
-      opacity: 1;
-      animation: none;
-    }
-  }
-  @media (min-width: 1600px) {
-    .home_1_img.hovered,
-    .home_2_img.hovered {
-      width: 600px;
-      top: -250px;
-      margin-left: -300px;
-    }
-  }
-  @media (max-width: 500px) {
-    .home_1_img.hovered,
-    .home_2_img.hovered {
-      display: none;
-    }
-  }
-  @media (max-width: 800px) {
-    .link_wrapper {
-      margin-top: 80px;
-    }
-  }
-  @media (max-height: 667px) {
-    .link_wrapper {
-      margin-top: 40px;
-    }
-  }
-  @media (max-height: 568px) {
-    .link_wrapper {
-      margin-top: 30px;
+      font-size: 15vw;
     }
   }
 `
@@ -175,22 +91,12 @@ const Menu = styled.div`
 const ImageWrapper = styled.div`
   position: absolute;
   z-index: 2;
+  top: 0;
   bottom: 0;
-  width: 700px;
-  height: 100vh;
+  width: 50%;
   left: 50%;
   animation: slide_in 0.3s ease-out;
   overflow: hidden;
-  img {
-    width: auto;
-    width: 100%;
-    object-fit: cover;
-  }
-  &.image_hide {
-    opacity: 0.2;
-    left: 100%;
-    animation: slide_away 0.5s linear;
-  }
   @keyframes slide_in {
     0% {
       left: 100%;
@@ -199,261 +105,405 @@ const ImageWrapper = styled.div`
       left: 50%;
     }
   }
-  @keyframes slide_away {
-    0% {
-      left: 50%;
-    }
-    100% {
-      left: 100%;
-    }
-  }
-  @media (max-width: 500px) {
-    animation: none;
-    &.image_hide {
-      opacity: 1;
-      left: 0;
-      animation: none;
-    }
-  }
   @media (max-width: 800px) {
-    bottom: 0;
+    position: relative;
     left: 0;
-    height: 500px;
     width: 100%;
-  }
-  @media (max-width: 500px) {
-    height: 500px;
-    width: 100%;
-  }
-  @media (max-width: 414px) and (max-height: 800px) {
     height: 440px;
-    width: 130%;
-  }
-  @media (max-width: 414px) and (max-height: 500px) {
-    height: 440px;
-    width: 100%;
-  }
-  @media (max-height: 667px) and (max-width: 800px) {
-    height: 400px;
-    width: 120%;
-  }
-  @media (max-height: 667px) and (max-width: 500px) {
-    height: 400px;
-    width: 100%;
-  }
-  @media (max-width: 370px) {
-    height: 370px;
-    width: 100%;
-  }
-  @media (max-width: 330px) {
-    height: 330px;
-    width: 100%;
-  }
-  @media (max-width: 330px) and (max-height: 530px) {
-    height: 290px;
-    width: 100%;
-  }
-  @media (min-width: 1400px) {
-    width: 800px;
-  }
-  @media (min-width: 1600px) {
-    width: 900px;
-  }
-  @media (min-width: 1800px) {
-    width: 1000px;
-  }
-  @media (min-width: 2000px) {
-    width: 1100px;
+    animation: none;
   }
 `
 
-const H1ImageWrapper = styled.div`
-  transition: 0.3s;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  width: 400px;
-  left: 150%;
-  top: -150px;
-  margin-right: 200px;
-  @media (min-width: 1600px) {
-    width: 600px;
-    top: -250px;
-    margin-left: -300px;
-  }
-  @media (max-width: 500px) {
-    display: none;
-  }
+const Hero = () => (
+  <WelcomeWrapper>
+    <p className="name" aria-hidden="true" style={{ position: "absolute" }}>
+      Dušan Tatranský
+    </p>
+    <HeroText>
+      <h3 className="eyebrow">Košice · Budapešť · online</h3>
+      <h1 className="headlines">Marketing. Kreativita. AI.</h1>
+      <p className="lead">
+        Som Dušan Tatranský. V marketingu som viac ako 15 rokov a mám za sebou
+        vyše 100 značiek. Posledné roky AI študujem, používam a učím. Pomáham
+        tímom pracovať s AI tak, aby pri tom neprestali rozmýšľať.
+      </p>
+      <p className="roles">
+        Creative &amp; Strategy Director v Promiseo · lektor AI · tvorca
+        vlastných produktov
+      </p>
+      <Buttons>
+        <Button href="#workshopy">Pozrieť workshopy →</Button>
+        <Button href={LINKS.substack} ghost external>
+          Čítať Marketing Circus
+        </Button>
+        <UnderLink
+          href={LINKS.linkedin}
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          <LinkedInIcon /> LinkedIn →
+        </UnderLink>
+      </Buttons>
+    </HeroText>
+    <ImageWrapper>
+      <GlitchImage url={dusanstvo_landing} />
+    </ImageWrapper>
+  </WelcomeWrapper>
+)
+
+/* ---------- Workshopy ---------- */
+
+const SectionImage = styled.div`
+  width: 100%;
+  margin: 0 0 60px;
 `
-const H2ImageWrapper = styled.div`
-  transition: 0.3s;
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-  width: 400px;
-  left: 150%;
-  top: -150px;
-  margin-right: 200px;
-  @media (min-width: 1600px) {
-    width: 600px;
-    top: -250px;
-    margin-left: -300px;
+
+const Workshopy = () => (
+  <Section id="workshopy" tone="dark">
+    <h3 className="eyebrow">Workshopy</h3>
+    <h2>AI sa používa ľahko. Dobre už ťažšie.</h2>
+    <p className="lead">
+      Dva praktické workshopy pre firmy. Po slovensky, u vás vo firme alebo
+      online. Tím pracuje na reálnych úlohách, nie na slajdoch o budúcnosti.
+    </p>
+    <SectionImage style={{ marginTop: 80 }}>
+      <img src={dusanstvo_sluzby} alt="Dušan Tatranský" />
+    </SectionImage>
+    <Rule>
+      <h2 className="outline">AI v práci</h2>
+      <h3>Pracujte múdrejšie. Tvorte lepšie. S AI.</h3>
+      <BlokRight>
+        <p>
+          Pre celé tímy z akéhokoľvek oddelenia. Zvyčajne ho objednáva HR alebo
+          firemné vzdelávanie.
+        </p>
+        <p>
+          Rešerše, e-maily, prezentácie, reporty, brainstorming. A časť, ktorú
+          väčšina AI školení vynecháva: ako si ľudia s pomocou AI budujú vlastný
+          profesionálny hlas na LinkedIne a inde, bez toho, aby sa z nich stali
+          firemné billboardy. A kedy stroju neveriť.
+        </p>
+        <p className="meta">3 hodiny · 4–10 ľudí</p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <h2 className="outline">AI pre marketingové tímy</h2>
+      <h3>Od briefu po kampaň. S AI.</h3>
+      <BlokRight>
+        <p>
+          Pre interné marketingové tímy. Zvyčajne ho objednáva marketingový
+          riaditeľ alebo majiteľ firmy.
+        </p>
+        <p>
+          Žiadny kurz ChatGPT. Tím prevedie jeden reálny brief cez rešerš,
+          stratégiu, nápady, texty a vizuály až po kreatívny prototyp. Potom ho
+          posúdime tak, ako by to urobil kreatívny riaditeľ.
+        </p>
+        <p className="meta">4 hodiny · 3–8 ľudí</p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <p className="lead">
+        Učím to, čo sám robím. Prvé termíny na Slovensku: začiatok roka 2027.
+      </p>
+      <Buttons>
+        <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
+        <UnderLink href="/workshopy">Podrobnosti o workshopoch</UnderLink>
+      </Buttons>
+    </Rule>
+  </Section>
+)
+
+/* ---------- O mne ---------- */
+
+const OMne = () => (
+  <Section id="o-mne" tone="light">
+    <h3 className="eyebrow">O mne</h3>
+    <h2>Tri úlohy, jedna hlava.</h2>
+    <SectionImage>
+      <img src={dusanstvo_omne} alt="Dušan Tatranský" />
+    </SectionImage>
+    <Rule>
+      <h3>
+        <a
+          className="textLink"
+          href={LINKS.promiseo}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Creative &amp; Strategy Director, Promiseo
+        </a>
+      </h3>
+      <BlokRight>
+        <p>
+          V Promiseo, jednej z najväčších nezávislých digitálnych agentúr na
+          Slovensku, vediem kreatívu a stratégiu. V marketingu som viac ako 15
+          rokov a pracoval som pre vyše 100 značiek. Naša filozofia: sila je v
+          nápade, nie v objeme.
+        </p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <h3>Lektor AI</h3>
+      <BlokRight>
+        <p>
+          V roku 2026 som dokončil MBA v špecializácii Mastery in AI (Edu
+          Effective). V rámci pracovnej skupiny ADMA som pomáhal navrhnúť
+          vysokoškolský predmet o AI v marketingovej komunikácii na Univerzite
+          Komenského v Bratislave. Som v zakladajúcej porote festivalu AI tvorby
+          UMELINA, kde mám na starosti kategóriu Reklama a branded content a jej
+          hodnotiace kritériá.
+        </p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <h3>Tvorca vlastných produktov</h3>
+      <BlokRight>
+        <p>
+          Stavám vlastné produkty, aby som videl, čo AI zvládne mimo
+          prezentácie.
+        </p>
+        <p>
+          <a
+            className="textLink"
+            href={LINKS.fatalRecall}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Fatal Recall</strong>
+          </a>
+          <Tag>AI-native</Tag>
+          <Tag>Beta</Tag>
+          <br />
+          Testuje, čo si ľudia z reklamy po čase naozaj zapamätajú, pomocou
+          publika simulovaného cez AI.
+        </p>
+        <p>
+          <a
+            className="textLink"
+            href={LINKS.destinion}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <strong>Destinion</strong>
+          </a>
+          <br />
+          Zakladateľ a CEO. Digitálny domov pre spomienky na ľudí a zvieratá. AI
+          mi pomáha s textami, vizuálmi, ukážkovými profilmi, promom a dizajnom
+          webu. Spomienky ostávajú ľudské.
+        </p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <p>
+        Tiež: podpredseda správnej rady ADMA pre stratégiu a komunikáciu · člen
+        hodnotiacej komisie MBA na Digitálnej univerzite · porotca Zlatý klinec
+        a Digital PIE · hosťujúci lektor na Univerzite Komenského, TUKE, EBMI a
+        CEIB.
+      </p>
+      <Buttons>
+        <UnderLink
+          href={LINKS.linkedin}
+          target="_blank"
+          rel="me noopener noreferrer"
+        >
+          Celá moja práca na LinkedIne →
+        </UnderLink>
+      </Buttons>
+    </Rule>
+  </Section>
+)
+
+/* ---------- Čo si myslím (layout sekcie O tebe) ---------- */
+
+const CoSiMyslim = () => (
+  <Section id="co-si-myslim" tone="dark">
+    <h3 className="eyebrow">Čo si myslím</h3>
+    <Rule>
+      <h2>Značky si ľudia zapamätajú. Alebo ich nahradia.</h2>
+      <BlokRight>
+        <p>
+          Pozornosť si len prenajímate. Pamäť si musíte zaslúžiť. O tom píšem v{" "}
+          <a
+            className="textLink"
+            href={LINKS.substack}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            newsletteri Marketing Circus
+          </a>
+          .
+        </p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <h2>AI sa používa ľahko. Dobre už ťažšie.</h2>
+      <BlokRight>
+        <p>
+          Nástroje má dnes každý. Rozdiel robí úsudok: čo sa opýtať, čo si
+          nechať a čo zahodiť. To robím a to aj{" "}
+          <a className="textLink" href="#workshopy">
+            učím
+          </a>
+          .
+        </p>
+      </BlokRight>
+    </Rule>
+    <Rule>
+      <p className="lead">
+        Cieľom je stále pamäť. AI vás k nej dovedie rýchlejšie. Alebo
+        rýchlejšie upadnete do zabudnutia.
+      </p>
+    </Rule>
+  </Section>
+)
+
+/* ---------- Kde ma bolo vidieť (layout sekcie Klienti) ---------- */
+
+const EventList = styled.ul`
+  list-style: none;
+  li {
+    border-top: 1px solid currentColor;
+    padding: 24px 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 8px 24px;
   }
-  @media (max-width: 500px) {
-    display: none;
-  }
-`
-const Headline = styled.p`
-  font-size: 18px;
-  text-align: center;
-  margin-bottom: 40px;
-  opacity: 1;
-  animation: text_show 0.4s linear;
-  @keyframes text_show {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @media (max-width: 800px) {
-    padding: 0 25px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    text-align: left;
-    margin-top: 200px;
-  }
-  @media (max-height: 667px) and (max-width: 800px) {
+  .date {
+    font-weight: 900;
     font-size: 14px;
-    margin-top: 200px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
   }
-  @media (max-height: 568px) and (max-width: 800px) {
-    font-size: 14px;
-    margin-top: 160px;
-  }
-`
-/*
-const WelcomeText = styled.div`
-  height: 100vh;
-  width: 100vw;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: url(${home_text});
-  opacity: 1;
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: auto 100%;
-`
-*/
-class Layout extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      isHovered: false,
-      isHovered_1: false,
-      isHovered_2: false,
+  @media (max-width: 700px) {
+    li {
+      grid-template-columns: 1fr;
     }
-    this.handleLeave_1 = this.handleLeave_1.bind(this)
-    this.handleLeave_2 = this.handleLeave_2.bind(this)
-    this.handleOver_1 = this.handleOver_1.bind(this)
-    this.handleOver_2 = this.handleOver_2.bind(this)
   }
-  handleOver_1() {
-    this.setState(prevState => ({
-      isHovered: true,
-      isHovered_1: true,
-    }))
-  }
-  handleOver_2() {
-    this.setState(prevState => ({
-      isHovered: true,
-      isHovered_2: true,
-    }))
-  }
-  handleLeave_1() {
-    this.setState(prevState => ({
-      isHovered: false,
-      isHovered_1: false,
-    }))
-  }
-  handleLeave_2() {
-    this.setState(prevState => ({
-      isHovered: false,
-      isHovered_2: false,
-    }))
-  }
-  render() {
-    const imageClass = this.state.isHovered ? "image_hide" : ""
-    const textClass = this.state.isHovered ? "text_hide" : ""
-    const link_wrapper_class = this.state.isHovered
-      ? "link_wrapper link_wrapper_hovered"
-      : "link_wrapper"
-    const home_1_class = this.state.isHovered_1
-      ? "home_1_img hovered"
-      : "home_1_img"
-    const home_2_class = this.state.isHovered_2
-      ? "home_2_img hovered"
-      : "home_2_img"
-    const home_1_text = this.state.isHovered_1
-      ? "headlines home_1 home_1_hovered"
-      : "headlines home_1"
-    const home_2_text = this.state.isHovered_2
-      ? "headlines home_2 home_2_hovered"
-      : "headlines home_2"
-    return (
-      <PageWrapper>
-        <BurgerWrapper>
-          <Burger burder_color="burger_white" />
-        </BurgerWrapper>
-        <h1 className="name">Dušan Tatranský</h1>
-        <WelcomeWrapper>
-          <Avatar />
-          <Menu>
-            <Headline className={textClass}>
-              Som Marketing Ninja z ďalekého východu ... z Košíc
-            </Headline>
-            <div className={link_wrapper_class}>
-              <Link to="/oMne">
-                <h1
-                  className={home_1_text}
-                  onMouseOver={this.handleOver_1}
-                  onMouseEnter={this.handleOver_1}
-                  onMouseMove={this.handleOver_1}
-                  onMouseLeave={this.handleLeave_1}
-                >
-                  Prečítaj si o mne
-                </h1>
-                <H1ImageWrapper className={home_1_class}>
-                  <img src={dusanstvo_omne} alt="" />
-                </H1ImageWrapper>
-              </Link>
-              <Link to="/oTebe">
-                <h1
-                  className={home_2_text}
-                  onMouseOver={this.handleOver_2}
-                  onMouseEnter={this.handleOver_2}
-                  onMouseMove={this.handleOver_2}
-                  onMouseLeave={this.handleLeave_2}
-                >
-                  O tebe
-                </h1>
-                <H2ImageWrapper className={home_2_class}>
-                  <img src={dusanstvo_otebe} alt="" />
-                </H2ImageWrapper>
-              </Link>
-            </div>
-          </Menu>
-        </WelcomeWrapper>
-        <ImageWrapper className={imageClass}>
-          <GlitchImage url={dusanstvo_landing} />
-        </ImageWrapper>
-        <Footer />
-        <FooterNarrow />
-      </PageWrapper>
-    )
-  }
+`
+
+const KdeMaBoloVidiet = () => {
+  const today = new Date().toISOString().slice(0, 10)
+  const next = upcoming.filter(item => item.date >= today)
+  return (
+    <Section id="kde-ma-bolo-vidiet" tone="orange">
+      <h3 className="eyebrow">Kde ma bolo vidieť</h3>
+      {next.length > 0 && (
+        <>
+          <h2 className="outline">Čo ma čaká</h2>
+          <EventList>
+            {next.map(item => (
+              <li key={item.date + item.event}>
+                <span className="date">{item.label}</span>
+                <span>
+                  <a
+                    className="textLink"
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <strong>{item.event}</strong>
+                  </a>{" "}
+                  · {item.text}
+                </span>
+              </li>
+            ))}
+          </EventList>
+        </>
+      )}
+      <Rule style={{ marginTop: 60 }}>
+        <h3>Médiá a pódiá</h3>
+        <BlokRight>
+          <p>TV Markíza · konferencia HN Stratégie · Pecha Kucha Night Prešov · IGNITE</p>
+        </BlokRight>
+      </Rule>
+      <Rule>
+        <h3>Univerzity a biznis školy</h3>
+        <BlokRight>
+          <p>
+            Univerzita Komenského (Fakulta managementu · Katedra marketingovej
+            komunikácie FiF) · TUKE · EBMI Praha · CEIB · Digitálna univerzita
+          </p>
+        </BlokRight>
+      </Rule>
+    </Section>
+  )
 }
+
+/* ---------- Bushido (z layoutBushido.js) ---------- */
+
+const BushidoRule = styled.div`
+  border-top: 1px solid var(--black);
+  padding: 40px 0;
+  h3.num {
+    color: var(--orange) !important;
+    margin-bottom: 10px;
+  }
+  p.rule {
+    padding-top: 0;
+    font-size: 40px;
+    line-height: 1.17;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--black);
+    transition: 0.2s;
+  }
+  &:hover p.rule {
+    color: var(--black);
+    -webkit-text-stroke: 0px;
+  }
+  @media (max-width: 1000px) {
+    p.rule {
+      font-size: 28px;
+    }
+  }
+  @media (max-width: 440px) {
+    p.rule {
+      font-size: 22px;
+    }
+  }
+`
+
+const bushido = [
+  "Šťastný je ten, kto dosiahne poznanie a slobodu, nie slávu alebo bohatstvo.",
+  "Úspešný je ten, kto so svojím časom môže naložiť tak, ako uzná za vhodné.",
+  "Kvalita pred kvantitou. Menej, ale zapamätateľne.",
+  "Rob výhradne pre spriaznené duše, nervy tvoje ušetrí to.",
+  "Urob viac, ako sa od teba čaká. Sľúb menej, ako dokážeš splniť.",
+  "Nevezmeš meno klientovo nadarmo, lež ochraňovať budeš ho.",
+  "Váž si pozornosť, svoju aj cudziu. Nikdy nespamuj.",
+  "Buduj dlhodobé vzťahy, aj keď je práca krátkodobá.",
+  "Používaj stroje, ponechaj si úsudok. AI je nástroj, vkus je remeslo.",
+  "Tvor veci, ktoré prežijú algoritmus.",
+]
+
+const Bushido = () => (
+  <Section id="bushido" tone="light">
+    <h2 className="outline" style={{ marginBottom: 60 }}>
+      Bushido
+    </h2>
+    {bushido.map((rule, i) => (
+      <BushidoRule key={i}>
+        <h3 className="num">{String(i + 1).padStart(2, "0")}</h3>
+        <p className="rule">{rule}</p>
+      </BushidoRule>
+    ))}
+  </Section>
+)
+
+/* ---------- stránka ---------- */
+
+const Layout = () => (
+  <PageShell>
+    <Hero />
+    <ProofStrip />
+    <Workshopy />
+    <OMne />
+    <CoSiMyslim />
+    <KdeMaBoloVidiet />
+    <Bushido />
+    <Contact />
+  </PageShell>
+)
 
 export default Layout

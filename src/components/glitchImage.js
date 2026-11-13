@@ -5,12 +5,11 @@ const ImageWrapper = styled.div`{
   width: 100%;
   height: 100%;
   background: url(${props => props.props});
-  background-size: 190%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 20%;
   position: relative;
   overflow: hidden;
-  @media (max-width: 1000px) {
-    background-position: -150px 0;
-  }
   @media (max-width: 800px) {
     background-size: cover;
     background-position: inherit;

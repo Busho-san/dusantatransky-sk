@@ -1,7 +1,14 @@
 /**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
+ * Gatsby SSR APIs.
  *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
+ * GTM plugin vkladá na začiatok <body> <noscript><iframe ...ns.html?id=GTM-...>.
+ * Nástroje, ktoré čítajú text stránky, ho vidia ako text. Odstraňujeme ho,
+ * hlavný GTM skript v <head> ostáva.
  */
-
-// You can delete this file if you're not using it
+exports.onPreRenderHTML = ({ getPreBodyComponents, replacePreBodyComponents }) => {
+  replacePreBodyComponents(
+    getPreBodyComponents().filter(
+      component => !(component && component.key === "plugin-google-tagmanager")
+    )
+  )
+}

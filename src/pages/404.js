@@ -7,9 +7,9 @@ import "../styles/global.css"
 
 const NotFoundPage = () => (
   <>
-  <SEO title="404: Not found" keywords={["dusan tatransky, osobna znacka, digitalna strategia, online bodyguard, personal marketing"]} />
-  <Layout />
-  </> 
+    <SEO title="Stránka sa nenašla | Dušan Tatranský" path="/404" noindex />
+    <Layout />
+  </>
 )
 
 export default NotFoundPage

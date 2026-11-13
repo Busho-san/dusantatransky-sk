@@ -95,7 +95,9 @@ h1 {
   font-weight: normal;
 }
 
-h1.name {
+.name {
+  font-family: "MyWebFont", sans-serif;
+  z-index: 1;
   top: 50%;
   left: 200px;
   writing-mode: vertical-rl;
@@ -208,5 +210,21 @@ h4 {
 @media (max-width: 420px) {
   h2 {
     font-size: 32px;
+  }
+}
+
+/* Burger na tmavých sekciách (prepína NavColor v blocks.js) */
+body.on-dark .bm-burger-bars {
+  background: var(--white) !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+section[id] {
+  scroll-margin-top: 0;
+}
+@media (max-width: 1300px) {
+  .name {
+    display: none;
   }
 }
