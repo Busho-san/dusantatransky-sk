@@ -35,7 +35,7 @@ const WelcomeWrapper = styled.header`
   position: relative;
   align-items: center;
   background: var(--white);
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
     flex-direction: column;
     align-items: flex-start;
     min-height: 0;
@@ -84,7 +84,7 @@ const HeroText = styled.div`
       font-size: 72px;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
     width: 100%;
     padding: 180px 25px 60px;
     h1.headlines {
@@ -110,7 +110,7 @@ const ImageWrapper = styled.div`
       left: 50%;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 1100px) {
     position: relative;
     left: 0;
     width: 100%;
