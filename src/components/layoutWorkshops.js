@@ -121,7 +121,7 @@ const LayoutWorkshops = () => (
         <h1 className="headlines">AI workshopy pre firmy</h1>
         <p className="lead">
           Prakticky, po slovensky, u vás vo firme alebo online. Vedie ich
-          kreatívny riaditeľ, ktorý AI používa každý deň a stále rozmýšľa sám.
+          kreatívny riaditeľ, ktorý AI používa každý deň a stále rozmýšľa vlastnou hlavou.
         </p>
         <Buttons>
           <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
@@ -178,7 +178,7 @@ const LayoutWorkshops = () => (
           prototypy · Testovanie · Postup, ktorý zopakujete
         </Chain>
         <p style={{ paddingTop: 20 }}>
-          Neučím len používať AI. Učím používať AI na lepší marketing.
+          Nejde o to, ako používať AI. Ide o to, ako s ňou robiť lepší marketing.
         </p>
         <p>Pre väčšie tímy pripravím rozšírenú verziu.</p>
       </BlokRight>
@@ -196,7 +196,7 @@ const LayoutWorkshops = () => (
       <Rule style={{ marginTop: 40 }}>
         <h3>Cena</h3>
         <BlokRight>
-          <p>Pilotné ceny do februára 2027. Napíšte mi.</p>
+          <p>Pilotné ceny platia do februára 2027. Kto skôr napíše, ten skôr vie.</p>
           <Buttons style={{ marginTop: 0 }}>
             <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
           </Buttons>

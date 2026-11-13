@@ -336,10 +336,10 @@ export const ProofStrip = () => (
     <ul>
       <li>15+ rokov · 100+ značiek</li>
       <li>MBA v špecializácii Mastery in AI</li>
-      <li>Spolutvorba predmetu o AI na Univerzite Komenského</li>
+      <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
       <li>
         <a href={LINKS.umelina} target="_blank" rel="noopener noreferrer">
-          Zakladajúca porota festivalu UMELINA
+          Zakladajúci porotca festivalu UMELINA
         </a>
       </li>
     </ul>
@@ -405,9 +405,9 @@ const ContactWrapper = styled.section`
 export const Contact = () => (
   <ContactWrapper id="kontakt" data-tone="dark">
     <div className="inner">
-      <h2>Poďme dať AI do práce. Poriadne.</h2>
+      <h2>Dajme AI poriadnu robotu.</h2>
       <p className="lead">
-        Napíšte mi o workshope, prednáške alebo niečom zvláštnejšom.
+        Workshop, prednáška alebo niečo, čo sa ťažko pomenúva. Napíšte.
       </p>
     </div>
     <a className="footer_mail" href={LINKS.emailWorkshop}>
