@@ -25,7 +25,7 @@ const jsonLd = {
       worksFor: {
         "@type": "Organization",
         name: "Promiseo",
-        url: "https://promiseo.com",
+        url: "https://www.promiseo.sk",
       },
       sameAs: [
         "https://www.dusantatransky.sk/",
