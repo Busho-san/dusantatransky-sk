@@ -10,7 +10,7 @@ const WorkshopyPage = () => (
   <>
     <SEO
       title="AI školenia a workshopy pre firmy | Dušan Tatranský"
-      description="Praktické AI workshopy po slovensky pre celé tímy aj marketingové oddelenia. AI v práci a AI pre marketingové tímy."
+      description="Praktické AI workshopy po slovensky pre celé tímy aj marketingové oddelenia. AI v práci a AI pre marketing."
       path="/workshopy"
       enUrl={LINKS.enWorkshops}
     />

@@ -78,26 +78,26 @@ const tones = {
 const SectionWrapper = styled.section`
   width: 100%;
   background: ${p => tones[p.tone].bg};
-  padding: 150px 0 150px;
+  padding: 90px 0;
   position: relative;
   * {
     color: ${p => tones[p.tone].fg};
   }
   h2 {
     padding-top: 0;
-    margin: 0 0 40px;
+    margin: 0 0 24px;
   }
   .outline {
     font-family: "MyWebFont", sans-serif;
     font-weight: normal;
     line-height: 0.95;
-    font-size: 90px;
+    font-size: 64px;
     letter-spacing: 0;
     color: transparent;
     -webkit-text-stroke: 1px ${p => tones[p.tone].stroke};
   }
   .eyebrow {
-    margin-bottom: 30px;
+    margin-bottom: 18px;
   }
   .lead {
     font-size: 20px;
@@ -119,9 +119,9 @@ const SectionWrapper = styled.section`
     }
   }
   @media (max-width: 1000px) {
-    padding: 100px 0;
+    padding: 64px 0;
     .outline {
-      font-size: 12vw;
+      font-size: 10vw;
     }
   }
 `
@@ -142,11 +142,11 @@ export const Section = ({ id, tone = "light", children }) => (
 )
 
 // Pravý blok so šírkou 70 % (z layoutu Služby)
-export const BlokRight = styled.div`
+export const BlokRight = styled.div.attrs({ className: "blok" })`
   position: relative;
   width: 70%;
   margin-left: 30%;
-  padding: 40px 0;
+  padding: 24px 0;
   p {
     padding: 0 25px 25px 0;
   }
@@ -163,9 +163,46 @@ export const BlokRight = styled.div`
 // Riadok s horným okrajom (z layoutu Bushido)
 export const Rule = styled.div`
   border-top: 1px solid currentColor;
-  padding: 50px 0;
+  padding: 28px 0;
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  column-gap: 40px;
+  align-items: start;
+  & > * {
+    grid-column: 1 / -1;
+  }
+  & > h2,
+  & > h3 {
+    grid-column: 1;
+  }
+  & > .blok {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+  & > h2.outline {
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+  & > h2:not(.outline) {
+    font-size: 36px;
+    line-height: 1.2;
+  }
   h3 {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    & > .blok {
+      grid-column: 1;
+      grid-row: auto;
+      padding-top: 12px;
+    }
+    & > h2.outline {
+      font-size: 10vw;
+    }
   }
   .meta {
     font-weight: 900;
@@ -196,7 +233,7 @@ export const Buttons = styled.div`
   flex-wrap: wrap;
   align-items: center;
   gap: 16px 28px;
-  margin-top: 40px;
+  margin-top: 28px;
 `
 
 const ButtonLink = styled.a`
@@ -335,6 +372,7 @@ export const ProofStrip = () => (
   <Strip data-tone="dark">
     <ul>
       <li>15+ rokov · 100+ značiek</li>
+      <li>Podpredseda ADMA</li>
       <li>MBA v špecializácii Mastery in AI</li>
       <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
       <li>
@@ -351,7 +389,7 @@ export const ProofStrip = () => (
 const ContactWrapper = styled.section`
   display: block;
   width: 100%;
-  padding: 150px 50px 0 50px;
+  padding: 90px 50px 0 50px;
   overflow: hidden;
   position: relative;
   background: var(--black);
@@ -368,8 +406,8 @@ const ContactWrapper = styled.section`
   .footer_mail {
     color: var(--black);
     -webkit-text-stroke: 1px var(--white);
-    margin-top: 80px;
-    margin-bottom: 40px;
+    margin-top: 48px;
+    margin-bottom: 24px;
     word-break: break-word;
     &:hover {
       color: var(--orange);
@@ -380,7 +418,7 @@ const ContactWrapper = styled.section`
     display: flex;
     justify-content: center;
     gap: 40px;
-    margin-bottom: 100px;
+    margin-bottom: 56px;
   }
   .bottom {
     display: flex;
@@ -395,7 +433,7 @@ const ContactWrapper = styled.section`
     width: 60px;
   }
   @media (max-width: 1000px) {
-    padding: 100px 25px 0 25px;
+    padding: 64px 25px 0 25px;
     .inner {
       width: 100%;
     }
@@ -407,7 +445,7 @@ export const Contact = () => (
     <div className="inner">
       <h2>Dajme AI poriadnu robotu.</h2>
       <p className="lead">
-        Workshop, prednáška alebo niečo, čo sa ťažko pomenúva. Napíšte.
+        Workshop, prednáška alebo niečo, čo sa ťažko pomenúva. Napíšte mi.
       </p>
     </div>
     <a className="footer_mail" href={LINKS.emailWorkshop}>
@@ -422,7 +460,7 @@ export const Contact = () => (
       </UnderLink>
     </div>
     <div className="inner bottom">
-      <span>© {new Date().getFullYear()} Dušan Tatranský</span>
+      <span>© {new Date().getFullYear()} Mgr. Dušan Tatranský, MBA</span>
       <UnderLink href={LINKS.en} hrefLang="en" lang="en">
         English version
       </UnderLink>

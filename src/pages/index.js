@@ -46,7 +46,7 @@ const jsonLd = {
     {
       "@type": "Service",
       "@id": "https://www.dusantatransky.sk/workshopy#ai-pre-marketing",
-      name: "AI pre marketingové tímy",
+      name: "AI pre marketing",
       serviceType: "AI workshop pre marketingové tímy",
       provider: { "@id": "https://dusantatransky.com/#person" },
       areaServed: "Slovakia",

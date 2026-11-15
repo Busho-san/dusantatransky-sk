@@ -10,6 +10,14 @@ export const LINKS = {
   destinion: "https://destinion.sk",
   umelina: "https://www.umelina.sk",
   marketingRulezz: "https://marketingrulezz.sk",
+  adma: "https://adma.sk",
+  digitalnaUniverzita: "https://digitalnauniverzita.sk",
+  digitalPie: "https://www.digitalpie.sk",
+  zlatyKlinec: "https://www.zlatyklinec.sk",
+  uniba: "https://www.fm.uniba.sk/en",
+  tuke: "https://tuke.sk/en",
+  ebmi: "https://www.ebmi.cz",
+  ceib: "https://ceib.sk/dusan-tatransky-2/",
 }
 
 export const SITE_URL = "https://www.dusantatransky.sk"

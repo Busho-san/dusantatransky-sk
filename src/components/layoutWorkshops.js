@@ -16,14 +16,14 @@ import {
 } from "./blocks"
 import { LINKS } from "../data/links"
 
-import dusanstvo_sluzby_2 from "../images/dusanstvo_sluzby_2.jpg"
+import workshopy_portret from "../images/workshopy_portret.jpg"
 import one from "../images/1.svg"
 import two from "../images/2.svg"
 import three from "../images/3.svg"
 
 const Intro = styled.header`
   background: var(--white);
-  padding: 220px 0 120px;
+  padding: 170px 0 64px;
   .inner {
     width: 900px;
     margin: 0 auto;
@@ -31,7 +31,7 @@ const Intro = styled.header`
   h1.headlines {
     text-align: left;
     font-size: 90px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
   .lead {
     font-size: 20px;
@@ -39,7 +39,7 @@ const Intro = styled.header`
     max-width: 700px;
   }
   @media (max-width: 1000px) {
-    padding: 180px 0 80px;
+    padding: 150px 0 48px;
     .inner {
       width: 100%;
       padding: 0 25px;
@@ -66,28 +66,39 @@ const List = styled.ul`
   }
 `
 
-const Chain = styled.p`
-  font-weight: 900;
-  font-size: 14px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  line-height: 2.2 !important;
+const Leader = styled.div`
+  display: grid;
+  grid-template-columns: 34% 1fr;
+  gap: 40px;
+  align-items: start;
+  img {
+    max-height: 520px;
+    object-fit: cover;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    img {
+      max-height: 420px;
+      object-position: 50% 20%;
+    }
+  }
 `
 
 const Steps = styled.ol`
   list-style: none;
   li {
     position: relative;
-    padding: 30px 0 30px 120px;
-    font-size: 24px;
+    padding: 14px 0 14px 84px;
+    font-size: 22px;
     line-height: 1.4;
-    min-height: 140px;
+    min-height: 84px;
     &:before {
       position: absolute;
       left: 0;
-      top: 30px;
-      width: 80px;
-      height: 80px;
+      top: 12px;
+      width: 60px;
+      height: 60px;
       content: "";
       background-repeat: no-repeat;
       background-size: cover;
@@ -104,7 +115,7 @@ const Steps = styled.ol`
   }
   @media (max-width: 600px) {
     li {
-      padding-left: 80px;
+      padding-left: 68px;
       font-size: 18px;
       &:before {
         width: 56px;
@@ -124,30 +135,29 @@ const LayoutWorkshops = () => (
           kreatívny riaditeľ, ktorý AI používa každý deň a stále rozmýšľa vlastnou hlavou.
         </p>
         <Buttons>
-          <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
+          <Button href={LINKS.emailWorkshop}>Dohodnúť workshop →</Button>
         </Buttons>
       </div>
     </Intro>
 
     <Section id="ai-v-praci" tone="dark">
+      <Rule>
       <h2 className="outline">AI v práci</h2>
-      <p className="meta" style={{ fontWeight: 900, letterSpacing: 3, textTransform: "uppercase", fontSize: 14, color: "var(--orange)" }}>
-        3 hodiny · 4–10 ľudí · u vás alebo online
-      </p>
+      <h3 className="meta">3 hodiny · 4–10 ľudí · u vás alebo online</h3>
       <BlokRight>
         <p>
           Pre celé tímy: administratíva, obchod, marketing, HR, zákaznícka
           podpora, manažment. Zvyčajne ho objednáva HR, firemné vzdelávanie
           alebo employer branding.
         </p>
-        <h3 style={{ marginBottom: 20 }}>Čo si účastníci vyskúšajú:</h3>
+        <h3 style={{ marginBottom: 12 }}>Čo si účastníci vyskúšajú:</h3>
         <List>
           <li>
-            Rešerš a overovanie faktov s AI, a ako spoznať, keď si AI vymýšľa
+            Rešerš a overovanie faktov s AI a ako spoznať, keď si AI vymýšľa
           </li>
           <li>E-maily, dokumenty, prezentácie a reporty za kratší čas</li>
           <li>
-            Brainstorming a riešenie problémov s AI ako sparing partnerom
+            Brainstorming a riešenie problémov s AI ako sparingpartnerom
           </li>
           <li>
             Vlastný profesionálny hlas na LinkedIne, z ktorého rastú oni aj
@@ -156,32 +166,40 @@ const LayoutWorkshops = () => (
           <li>Employer branding, ktorý neznie ako tlačová správa</li>
           <li>Čo do AI nástroja nikdy nevkladať</li>
         </List>
-        <p style={{ paddingTop: 20 }}>
-          Cvičenia pripravím podľa úloh, ktoré váš tím naozaj robí.
+        <p style={{ paddingTop: 12 }}>
+          Cvičenia pripravím podľa úloh, ktoré váš tím naozaj rieši.
         </p>
       </BlokRight>
+      </Rule>
     </Section>
 
     <Section id="ai-pre-marketing" tone="light">
-      <h2 className="outline">AI pre marketingové tímy</h2>
-      <p style={{ fontWeight: 900, letterSpacing: 3, textTransform: "uppercase", fontSize: 14, color: "var(--orange)" }}>
-        4 hodiny · 3–8 ľudí · u vás alebo online
-      </p>
+      <Rule>
+      <h2 className="outline">AI pre marketing</h2>
+      <h3 className="meta">4 hodiny · 3–8 ľudí · u vás alebo online</h3>
       <BlokRight>
         <p>
           Pre interné marketingové tímy. Zvyčajne ho objednáva marketingový
           riaditeľ, CMO alebo majiteľ firmy.
         </p>
-        <h3 style={{ marginBottom: 20 }}>Jeden reálny brief od začiatku do konca:</h3>
-        <Chain>
-          Brief · Rešerš · Stratégia · Nápady · Hodnotenie · Texty · Vizuály a
-          prototypy · Testovanie · Postup, ktorý zopakujete
-        </Chain>
-        <p style={{ paddingTop: 20 }}>
+        <h3 style={{ marginBottom: 12 }}>Jeden reálny brief od začiatku do konca:</h3>
+        <List>
+          <li>Brief</li>
+          <li>Rešerš</li>
+          <li>Stratégia</li>
+          <li>Nápady</li>
+          <li>Hodnotenie</li>
+          <li>Texty</li>
+          <li>Vizuály a prototypy</li>
+          <li>Testovanie</li>
+          <li>Postup, ktorý zopakujete</li>
+        </List>
+        <p style={{ paddingTop: 12 }}>
           Nejde o to, ako používať AI. Ide o to, ako s ňou robiť lepší marketing.
         </p>
         <p>Pre väčšie tímy pripravím rozšírenú verziu.</p>
       </BlokRight>
+      </Rule>
     </Section>
 
     <Section id="ako-to-prebieha" tone="orange">
@@ -190,40 +208,37 @@ const LayoutWorkshops = () => (
         <li className="one">Krátky hovor o vašom tíme a jeho práci.</li>
         <li className="two">Cvičenia prispôsobím vašim reálnym úlohám.</li>
         <li className="three">
-          Workshop. Otvorené notebooky, skutočná práca na stole.
+          Workshop. Otvorené notebooky, skutočná práca pod mojím vedením.
         </li>
       </Steps>
-      <Rule style={{ marginTop: 40 }}>
+      <Rule style={{ marginTop: 24 }}>
         <h3>Cena</h3>
         <BlokRight>
           <p>Pilotné ceny platia do februára 2027. Kto skôr napíše, ten skôr vie.</p>
           <Buttons style={{ marginTop: 0 }}>
-            <Button href={LINKS.emailWorkshop}>Napíšte mi o workshope →</Button>
+            <Button href={LINKS.emailWorkshop}>Dohodnite si workshop →</Button>
           </Buttons>
         </BlokRight>
       </Rule>
     </Section>
 
     <Section id="kto-ho-vedie" tone="light">
-      <h2>Kto ho vedie</h2>
-      <div style={{ margin: "40px 0" }}>
-        <img src={dusanstvo_sluzby_2} alt="Dušan Tatranský" />
-      </div>
-      <BlokRight>
+      <h2>Kto vedie workshop</h2>
+      <Leader>
+        <img src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
+        <div>
         <p>
-          V roku 2026 som dokončil MBA v špecializácii Mastery in AI (Edu
-          Effective). V rámci pracovnej skupiny ADMA som pomáhal navrhnúť
-          vysokoškolský predmet o AI v marketingovej komunikácii na Univerzite
-          Komenského v Bratislave.
+          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
         </p>
         <UnderLink
           href={LINKS.linkedin}
           target="_blank"
           rel="me noopener noreferrer"
         >
-          Celá moja práca na LinkedIne →
+          Celé moje CV na LinkedIne →
         </UnderLink>
-      </BlokRight>
+        </div>
+      </Leader>
     </Section>
     <ProofStrip />
     <Contact />
