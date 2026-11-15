@@ -281,8 +281,8 @@ export const SubstackIcon = () => (
 const links = [
   { href: withPrefix("/") + "#workshopy", label: "Workshopy" },
   { href: withPrefix("/") + "#o-mne", label: "O mne" },
-  { href: withPrefix("/") + "#co-si-myslim", label: "Čo si myslím" },
-  { href: withPrefix("/") + "#kde-ma-bolo-vidiet", label: "Kde ma bolo vidieť" },
+  { href: withPrefix("/") + "#co-si-myslim", label: "Čomu verím" },
+  { href: withPrefix("/") + "#kde-ma-bolo-vidiet", label: "Dušan naživo" },
   { href: withPrefix("/") + "#bushido", label: "Bushido" },
 ]
 

@@ -214,7 +214,7 @@ const LayoutWorkshops = () => (
       <Rule style={{ marginTop: 24 }}>
         <h3>Cena</h3>
         <BlokRight>
-          <p>Pilotné ceny platia do februára 2027. Kto skôr napíše, ten skôr vie.</p>
+          <p>Pilotné ceny platia do februára 2027. Kto skôr napíše, ten skôr vie.</p>
           <Buttons style={{ marginTop: 0 }}>
             <Button href={LINKS.emailWorkshop}>Dohodnite si workshop →</Button>
           </Buttons>

@@ -121,9 +121,6 @@ const ImageWrapper = styled.div`
 
 const Hero = () => (
   <WelcomeWrapper>
-    <p className="name" aria-hidden="true" style={{ position: "absolute" }}>
-      Dušan Tatranský
-    </p>
     <HeroText>
       <h3 className="eyebrow">Košice · Budapešť · online</h3>
       <h1 className="headlines">Marketing. Kreativita. AI.</h1>
@@ -204,7 +201,7 @@ const Workshopy = () => (
     </Rule>
     <Rule>
       <p className="lead">
-        Neučím teóriu. Učím to, čo bežne robím pre klientov. Prvé termíny: začiatok 2027.
+        Neučím teóriu. Učím to, čo bežne robím pre klientov. Prvé termíny: začiatok 2027.
       </p>
       <Buttons>
         <Button href={LINKS.emailWorkshop}>Objednať workshop →</Button>
@@ -450,6 +447,26 @@ const BushidoRule = styled.div`
   }
 `
 
+const Motto = styled.p`
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid var(--black);
+  font-family: "MyWebFont", sans-serif;
+  font-size: 48px;
+  line-height: 1.1;
+  && {
+    color: var(--black);
+  }
+  em {
+    font: inherit;
+    font-style: normal;
+    background: linear-gradient(transparent 58%, var(--orange) 58%);
+  }
+  @media (max-width: 1000px) {
+    font-size: 8vw;
+  }
+`
+
 const bushido = [
   "Šťastný je ten, kto dosiahne poznanie a slobodu, nie slávu alebo bohatstvo.",
   "Úspešný je ten, kto so svojím časom môže naložiť tak, ako uzná za vhodné.",
@@ -473,10 +490,9 @@ const Bushido = () => (
         <h3 className="num">{String(i + 1).padStart(2, "0")}</h3>        <p className="rule">{rule}</p>
       </BushidoRule>
     ))}
-    <BushidoRule>
-      <span />
-      <p className="lead">Pozornosť sa dá kúpiť. Pamäť si treba zaslúžiť.</p>
-    </BushidoRule>
+    <Motto>
+      <em>Pozornosť sa dá kúpiť.</em> <em>Pamäť si treba zaslúžiť.</em>
+    </Motto>
   </Section>
 )
 
