@@ -373,8 +373,8 @@ export const ProofStrip = () => (
     <ul>
       <li>15+ rokov · 100+ značiek</li>
       <li>Podpredseda ADMA</li>
-      <li>MBA v špecializácii Mastery in AI</li>
-      <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
+      <li>MBA v špecializácii Mastery in AI</li>
+      <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
       <li>
         <a href={LINKS.umelina} target="_blank" rel="noopener noreferrer">
           Zakladajúci porotca festivalu UMELINA

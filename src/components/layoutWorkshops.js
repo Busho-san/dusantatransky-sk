@@ -131,8 +131,8 @@ const LayoutWorkshops = () => (
       <div className="inner">
         <h1 className="headlines">AI workshopy pre firmy</h1>
         <p className="lead">
-          Prakticky, po slovensky, u vás vo firme alebo online. Vedie ich
-          kreatívny riaditeľ, ktorý AI používa každý deň a stále rozmýšľa vlastnou hlavou.
+          Prakticky, po slovensky, u vás vo firme alebo online. Vedie ich
+          kreatívny riaditeľ, ktorý AI používa každý deň a stále rozmýšľa vlastnou hlavou.
         </p>
         <Buttons>
           <Button href={LINKS.emailWorkshop}>Dohodnúť workshop →</Button>
@@ -142,8 +142,8 @@ const LayoutWorkshops = () => (
 
     <Section id="ai-v-praci" tone="dark">
       <Rule>
-      <h2 className="outline">AI v práci</h2>
-      <h3 className="meta">3 hodiny · 4–10 ľudí · u vás alebo online</h3>
+      <h2 className="outline">AI v práci</h2>
+      <h3 className="meta">3 hodiny · 4–10 ľudí · u vás alebo online</h3>
       <BlokRight>
         <p>
           Pre celé tímy: administratíva, obchod, marketing, HR, zákaznícka
@@ -153,14 +153,14 @@ const LayoutWorkshops = () => (
         <h3 style={{ marginBottom: 12 }}>Čo si účastníci vyskúšajú:</h3>
         <List>
           <li>
-            Rešerš a overovanie faktov s AI a ako spoznať, keď si AI vymýšľa
+            Rešerš a overovanie faktov s AI a ako spoznať, keď si AI vymýšľa
           </li>
-          <li>E-maily, dokumenty, prezentácie a reporty za kratší čas</li>
+          <li>E-maily, dokumenty, prezentácie a reporty za kratší čas</li>
           <li>
-            Brainstorming a riešenie problémov s AI ako sparingpartnerom
+            Brainstorming a riešenie problémov s AI ako sparingpartnerom
           </li>
           <li>
-            Vlastný profesionálny hlas na LinkedIne, z ktorého rastú oni aj
+            Vlastný profesionálny hlas na LinkedIne, z ktorého rastú oni aj
             firma
           </li>
           <li>Employer branding, ktorý neznie ako tlačová správa</li>
@@ -176,7 +176,7 @@ const LayoutWorkshops = () => (
     <Section id="ai-pre-marketing" tone="light">
       <Rule>
       <h2 className="outline">AI pre marketing</h2>
-      <h3 className="meta">4 hodiny · 3–8 ľudí · u vás alebo online</h3>
+      <h3 className="meta">4 hodiny · 3–8 ľudí · u vás alebo online</h3>
       <BlokRight>
         <p>
           Pre interné marketingové tímy. Zvyčajne ho objednáva marketingový
@@ -190,12 +190,12 @@ const LayoutWorkshops = () => (
           <li>Nápady</li>
           <li>Hodnotenie</li>
           <li>Texty</li>
-          <li>Vizuály a prototypy</li>
+          <li>Vizuály a prototypy</li>
           <li>Testovanie</li>
           <li>Postup, ktorý zopakujete</li>
         </List>
         <p style={{ paddingTop: 12 }}>
-          Nejde o to, ako používať AI. Ide o to, ako s ňou robiť lepší marketing.
+          Nejde o to, ako používať AI. Ide o to, ako s ňou robiť lepší marketing.
         </p>
         <p>Pre väčšie tímy pripravím rozšírenú verziu.</p>
       </BlokRight>
@@ -205,7 +205,7 @@ const LayoutWorkshops = () => (
     <Section id="ako-to-prebieha" tone="orange">
       <h2>Ako to prebieha</h2>
       <Steps>
-        <li className="one">Krátky hovor o vašom tíme a jeho práci.</li>
+        <li className="one">Krátky hovor o vašom tíme a jeho práci.</li>
         <li className="two">Cvičenia prispôsobím vašim reálnym úlohám.</li>
         <li className="three">
           Workshop. Otvorené notebooky, skutočná práca pod mojím vedením.
@@ -225,10 +225,10 @@ const LayoutWorkshops = () => (
     <Section id="kto-ho-vedie" tone="light">
       <h2>Kto vedie workshop</h2>
       <Leader>
-        <img src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
+        <img src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
         <div>
         <p>
-          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
+          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
         </p>
         <UnderLink
           href={LINKS.linkedin}

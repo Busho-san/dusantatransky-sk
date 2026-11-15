@@ -126,10 +126,10 @@ const Hero = () => (
       <h1 className="headlines">Marketing. Kreativita. AI.</h1>
       <h3 className="subtitle">Beriem to osobne.</h3>
       <p className="lead">
-        Som Dušan. Už vyše pätnásť rokov sa živím marketingom a rukami mi prešlo vyše 100 značiek. Umelú inteligenciu študujem, používam a učím o nej. Firmám ukazujem, ako s ňou pracovať a neodovzdať jej pritom aj svoju dušu.
+        Som Dušan. Už vyše pätnásť rokov sa živím marketingom a rukami mi prešlo vyše 100 značiek. Umelú inteligenciu študujem, používam a učím o nej. Firmám ukazujem, ako s ňou pracovať a neodovzdať jej pritom aj svoju dušu.
       </p>
       <p className="roles">
-        Creative &amp; Strategy Director v Promiseo · lektor AI · zakladateľ Destinion a Fatal Recall
+        Creative &amp; Strategy Director v Promiseo · lektor AI · zakladateľ Destinion a Fatal Recall
       </p>
       <Buttons>
         <Button href="#workshopy">Workshopy →</Button>
@@ -167,20 +167,20 @@ const Workshopy = () => (
     <h3 className="eyebrow">Workshopy</h3>
     <h2>ChatGPT má dnes každý. Výsledky nie.</h2>
     <p className="lead">
-      Pre firmy ponúkam dva workshopy. Po slovensky, u vás alebo online. Na úrovni, akú potrebujete. Pracujeme na tom, čo váš tím aktuálne rieši a dokáže hneď využiť.
+      Pre firmy ponúkam dva workshopy. Po slovensky, u vás alebo online. Na úrovni, akú potrebujete. Pracujeme na tom, čo váš tím aktuálne rieši a dokáže hneď využiť.
     </p>
     <SectionImage style={{ marginTop: 40 }}>
       <img src={workshopy_home} alt="Dušan Tatranský na workshope" />
     </SectionImage>
     <Rule>
-      <h2 className="outline">AI v práci</h2>
+      <h2 className="outline">AI v práci</h2>
       <h3>Robotom robotu. Rozum si nechajte.</h3>
       <BlokRight>
         <p>
           Pre kohokoľvek vo firme, od fakturácie po obchod. Objednáva ho väčšinou HR.
         </p>
         <p>
-          Rešerše, maily, prezentácie, reporty, brainstorming. Employer branding plus to, čo iné AI školenia vynechávajú: ako si s AI vybudovať vlastný hlas na LinkedIne a nestať sa chodiacim firemným billboardom. A kedy stroje nepočúvať na slovo.
+          Rešerše, maily, prezentácie, reporty, brainstorming. Employer branding plus to, čo iné AI školenia vynechávajú: ako si s AI vybudovať vlastný hlas na LinkedIne a nestať sa chodiacim firemným billboardom. A kedy stroje nepočúvať na slovo.
         </p>
         <p className="meta">3 hodiny · 4–10 ľudí</p>
       </BlokRight>
@@ -194,7 +194,7 @@ const Workshopy = () => (
           riaditeľ alebo majiteľ firmy.
         </p>
         <p>
-          Toto nie je kurz ChatGPT. Váš tím prevedie jeden skutočný brief cez rešerš, stratégiu, nápady, texty a vizuály až po prototyp kampane. Potom ho rozoberiem tak, ako to robím v agentúre. Bez rukavičiek.
+          Toto nie je kurz ChatGPT. Váš tím prevedie jeden skutočný brief cez rešerš, stratégiu, nápady, texty a vizuály až po prototyp kampane. Potom ho rozoberiem tak, ako to robím v agentúre. Bez rukavičiek.
         </p>
         <p className="meta">4 hodiny · 3–8 ľudí</p>
       </BlokRight>
@@ -205,7 +205,7 @@ const Workshopy = () => (
       </p>
       <Buttons>
         <Button href={LINKS.emailWorkshop}>Objednať workshop →</Button>
-        <UnderLink href={withPrefix("/workshopy")}>Viac o workshopoch</UnderLink>
+        <UnderLink href={withPrefix("/workshopy")}>Viac o workshopoch</UnderLink>
       </Buttons>
     </Rule>
   </Section>
@@ -215,7 +215,7 @@ const Workshopy = () => (
 
 const OMne = () => (
   <Section id="o-mne" tone="light">
-    <h3 className="eyebrow">O mne</h3>
+    <h3 className="eyebrow">O mne</h3>
     <h2>Tri roboty, jedna hlava.</h2>
     <SectionImage>
       <img src={dusanstvo_omne} alt="Dušan Tatranský" />
@@ -233,7 +233,7 @@ const OMne = () => (
       </h3>
       <BlokRight>
         <p>
-          Vediem kreatívu a stratégiu v Promiseo, jednej z najväčších nezávislých digitálnych agentúr na Slovensku. Veríme, že kampaň nemusí stáť iba na rozpočte. Dôležitejšie sú značka a nápad.
+          Vediem kreatívu a stratégiu v Promiseo, jednej z najväčších nezávislých digitálnych agentúr na Slovensku. Veríme, že kampaň nemusí stáť iba na rozpočte. Dôležitejšie sú značka a nápad.
         </p>
       </BlokRight>
     </Rule>
@@ -241,7 +241,7 @@ const OMne = () => (
       <h3>Lektor AI</h3>
       <BlokRight>
         <p>
-          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
+          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
         </p>
       </BlokRight>
     </Rule>
@@ -264,7 +264,7 @@ const OMne = () => (
           <Tag>AI-native</Tag>
           <Tag>Beta</Tag>
           <br />
-          Zistite, čo si ľudia z vašej reklamy pamätajú aj o týždeň. Na publiku, ktoré simuluje AI. Nepáľte peniaze na kreatívach, ktoré si nikto nezapamätá.
+          Zistite, čo si ľudia z vašej reklamy pamätajú aj o týždeň. Na publiku, ktoré simuluje AI. Nepáľte peniaze na kreatívach, ktoré si nikto nezapamätá.
         </p>
         <p>
           <a
@@ -276,13 +276,13 @@ const OMne = () => (
             <strong>Destinion</strong>
           </a>
           <br />
-          Digitálny domov pre spomienky na ľudí a zvieratá. AI pomáha s textami, vizuálmi aj webom. Spomienky ostávajú výhradne ľudské.
+          Digitálny domov pre spomienky na ľudí a zvieratá. AI pomáha s textami, vizuálmi aj webom. Spomienky ostávajú výhradne ľudské.
         </p>
       </BlokRight>
     </Rule>
     <Rule>
       <p>
-        Tiež: podpredseda správnej rady <a className="textLink" href={LINKS.adma} target="_blank" rel="noopener noreferrer">ADMA</a> pre stratégiu a komunikáciu · člen hodnotiacej komisie MBA na <a className="textLink" href={LINKS.digitalnaUniverzita} target="_blank" rel="noopener noreferrer">Digitálnej univerzite</a> · porotca <a className="textLink" href={LINKS.zlatyKlinec} target="_blank" rel="noopener noreferrer">Zlatý klinec</a> a <a className="textLink" href={LINKS.digitalPie} target="_blank" rel="noopener noreferrer">Digital PIE</a> · hosťujúci lektor na <a className="textLink" href={LINKS.uniba} target="_blank" rel="noopener noreferrer">Univerzite Komenského</a>, <a className="textLink" href={LINKS.tuke} target="_blank" rel="noopener noreferrer">TUKE</a>, <a className="textLink" href={LINKS.ebmi} target="_blank" rel="noopener noreferrer">EBMI</a> a <a className="textLink" href={LINKS.ceib} target="_blank" rel="noopener noreferrer">CEIB</a>.
+        Tiež: podpredseda správnej rady <a className="textLink" href={LINKS.adma} target="_blank" rel="noopener noreferrer">ADMA</a> pre stratégiu a komunikáciu · člen hodnotiacej komisie MBA na <a className="textLink" href={LINKS.digitalnaUniverzita} target="_blank" rel="noopener noreferrer">Digitálnej univerzite</a> · porotca <a className="textLink" href={LINKS.zlatyKlinec} target="_blank" rel="noopener noreferrer">Zlatý klinec</a> a <a className="textLink" href={LINKS.digitalPie} target="_blank" rel="noopener noreferrer">Digital PIE</a> · hosťujúci lektor na <a className="textLink" href={LINKS.uniba} target="_blank" rel="noopener noreferrer">Univerzite Komenského</a>, <a className="textLink" href={LINKS.tuke} target="_blank" rel="noopener noreferrer">TUKE</a>, <a className="textLink" href={LINKS.ebmi} target="_blank" rel="noopener noreferrer">EBMI</a> a <a className="textLink" href={LINKS.ceib} target="_blank" rel="noopener noreferrer">CEIB</a>.
       </p>
       <Buttons>
         <UnderLink
@@ -290,7 +290,7 @@ const OMne = () => (
           target="_blank"
           rel="me noopener noreferrer"
         >
-          Zobraziť moje CV a profil na LinkedIne →
+          Zobraziť moje CV a profil na LinkedIne →
         </UnderLink>
       </Buttons>
     </Rule>
@@ -306,7 +306,7 @@ const CoSiMyslim = () => (
       <h2>Buď si vás zapamätajú, alebo vás nahradia.</h2>
       <BlokRight>
         <p>
-          Kúpená pozornosť sa minie s rozpočtom. Čo ľuďom utkvie v pamäti, z toho profitujete. O tom a o mojom netradičnom pohľade na súčasný marketing píšem v{" "}
+          Kúpená pozornosť sa minie s rozpočtom. Čo ľuďom utkvie v pamäti, z toho profitujete. O tom a o mojom netradičnom pohľade na súčasný marketing píšem v{" "}
           <a
             className="textLink"
             href={LINKS.substack}
@@ -324,7 +324,7 @@ const CoSiMyslim = () => (
       <BlokRight>
         <p>
           Rozdiel robí úsudok: čo sa opýtať, čo si
-          nechať a čo zahodiť. To robím a to aj{" "}
+          nechať a čo zahodiť. To robím a to aj{" "}
           <a className="textLink" href="#workshopy">
             učím
           </a>
@@ -334,7 +334,7 @@ const CoSiMyslim = () => (
     </Rule>
     <Rule>
       <p className="lead">
-        AI vás dostane do pamäti ľudí rýchlejšie. Alebo sa z nej rýchlejšie vyparíte.
+        AI vás dostane do pamäti ľudí rýchlejšie. Alebo sa z nej rýchlejšie vyparíte.
       </p>
     </Rule>
   </Section>
@@ -394,13 +394,13 @@ const KdeMaBoloVidiet = () => {
         </>
       )}
       <Rule style={{ marginTop: 36 }}>
-        <h3>Médiá a pódiá</h3>
+        <h3>Médiá a pódiá</h3>
         <BlokRight>
           <p>TV Markíza · konferencia HN Stratégie · Pecha Kucha Night Prešov · IGNITE</p>
         </BlokRight>
       </Rule>
       <Rule>
-        <h3>Univerzity a biznis školy</h3>
+        <h3>Univerzity a biznis školy</h3>
         <BlokRight>
           <p>
             <a className="textLink" href={LINKS.uniba} target="_blank" rel="noopener noreferrer">Univerzita Komenského</a> (Fakulta managementu · Katedra marketingovej komunikácie FiF) · <a className="textLink" href={LINKS.tuke} target="_blank" rel="noopener noreferrer">TUKE</a> · <a className="textLink" href={LINKS.ebmi} target="_blank" rel="noopener noreferrer">EBMI Praha</a> · <a className="textLink" href={LINKS.ceib} target="_blank" rel="noopener noreferrer">CEIB</a> · <a className="textLink" href={LINKS.digitalnaUniverzita} target="_blank" rel="noopener noreferrer">Digitálna univerzita</a>
@@ -468,13 +468,13 @@ const Motto = styled.p`
 `
 
 const bushido = [
-  "Šťastný je ten, kto dosiahne poznanie a slobodu, nie slávu alebo bohatstvo.",
+  "Šťastný je ten, kto dosiahne poznanie a slobodu, nie slávu alebo bohatstvo.",
   "Úspešný je ten, kto so svojím časom môže naložiť tak, ako uzná za vhodné.",
-  "Si tvor, a preto tvor, no tak, aby sa na to zabudnúť nedalo.",
+  "Si tvor, a preto tvor, no tak, aby sa na to zabudnúť nedalo.",
   "Rob výhradne pre spriaznené duše, nervy tvoje ušetrí to.",
   "Sľúb menej, než splniť dokážeš. Urob viac, než sa od teba čaká.",
   "Nevezmeš meno klientovo nadarmo, lež ochraňovať budeš ho.",
-  "Pozornosť cudziu ako vlastnú váž si a blížneho svojho nezaspamuješ.",
+  "Pozornosť cudziu ako vlastnú váž si a blížneho svojho nezaspamuješ.",
   "Krátka nech je zákazka, dlhý nech je vzťah.",
   "Stroju prácu zver, úsudok si ponechaj. AI je nástroj, vkus je remeslo.",
   "Menej je niekedy viac, uprednostňuj kvalitu pred kvantitou.",
