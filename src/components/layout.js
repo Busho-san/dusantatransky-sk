@@ -369,10 +369,12 @@ const KdeMaBoloVidiet = () => {
   const next = upcoming.filter(item => item.date >= today)
   return (
     <Section id="kde-ma-bolo-vidiet" tone="orange">
-      <h3 className="eyebrow">Dušan naživo</h3>
+      <h2 className="outline" style={{ marginBottom: 28 }}>
+        Dušan naživo
+      </h2>
       {next.length > 0 && (
         <>
-          <h2 className="outline">Najbližšie</h2>
+          <h3 className="eyebrow">Najbližšie</h3>
           <EventList>
             {next.map(item => (
               <li key={item.date + item.event}>
@@ -491,7 +493,9 @@ const Bushido = () => (
       </BushidoRule>
     ))}
     <Motto>
-      <em>Pozornosť sa dá kúpiť.</em> <em>Pamäť si treba zaslúžiť.</em>
+      <em>Pozornosť sa dá kúpiť.</em>
+      <br />
+      <em>Pamäť si treba zaslúžiť.</em>
     </Motto>
   </Section>
 )

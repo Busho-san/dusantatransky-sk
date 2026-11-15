@@ -5,7 +5,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/dusantatransky/",
   substack: "https://marketingcircus.substack.com",
   emailWorkshop: "mailto:dusan@tatransky.sk?subject=AI%20workshop",
-  promiseo: "https://promiseo.com",
+  promiseo: "https://www.promiseo.sk",
   fatalRecall: "https://www.fatalrecall.com",
   destinion: "https://destinion.sk",
   umelina: "https://www.umelina.sk",
@@ -16,7 +16,7 @@ export const LINKS = {
   zlatyKlinec: "https://www.zlatyklinec.sk",
   uniba: "https://www.fm.uniba.sk/en",
   tuke: "https://tuke.sk/en",
-  ebmi: "https://www.ebmi.cz",
+  ebmi: "https://www.ebmi.cz/lektori-prednasejici/",
   ceib: "https://ceib.sk/dusan-tatransky-2/",
 }
 

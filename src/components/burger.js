@@ -321,7 +321,7 @@ class Burger extends React.Component {
           >
             <SubstackIcon />
           </a>
-          <a className="nav_button" href={withPrefix("/") + "#workshopy"}>
+          <a className="nav_button" href={withPrefix("/workshopy")}>
             Workshopy
           </a>
         </TopActions>
