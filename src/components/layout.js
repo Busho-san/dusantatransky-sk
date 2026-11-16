@@ -123,7 +123,9 @@ const Hero = () => (
   <WelcomeWrapper>
     <HeroText>
       <h3 className="eyebrow">Košice · Budapešť · online</h3>
-      <h1 className="headlines">Marketing. Kreativita. AI.</h1>
+      <h1 className="headlines">
+        Marketing. Kreativita. AI. <span role="img" aria-label="opica">🐒</span>
+      </h1>
       <h3 className="subtitle">Beriem to osobne.</h3>
       <p className="lead">
         Som Dušan. Už vyše pätnásť rokov sa živím marketingom a rukami mi prešlo vyše 100 značiek. Umelú inteligenciu študujem, používam a učím o nej. Firmám ukazujem, ako s ňou pracovať a neodovzdať jej pritom aj svoju dušu.

@@ -31,6 +31,8 @@ function SEO({ title, description, path, enUrl, jsonLd, noindex }) {
     ? []
     : [
         { rel: "canonical", href: url },
+        { rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16.png" },
+        { rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
         { rel: "alternate", hrefLang: "sk", href: url },
         { rel: "alternate", hrefLang: "en", href: enUrl || LINKS.en },
         { rel: "alternate", hrefLang: "x-default", href: LINKS.en },
