@@ -46,13 +46,13 @@ const HeroText = styled.div`
   position: relative;
   z-index: 3;
   width: 50%;
-  padding: 170px 50px 80px 260px;
+  padding: 170px 40px 80px 120px;
   .eyebrow {
     margin-bottom: 30px;
   }
   h1.headlines {
     text-align: left;
-    font-size: 90px;
+    font-size: calc(7.2vw - 28px);
     margin-bottom: 20px;
   }
   .subtitle {
@@ -73,15 +73,9 @@ const HeroText = styled.div`
     line-height: 1.9;
     max-width: 560px;
   }
-  @media (min-width: 1600px) {
+  @media (min-width: 2200px) {
     h1.headlines {
       font-size: 130px;
-    }
-  }
-  @media (max-width: 1300px) {
-    padding-left: 120px;
-    h1.headlines {
-      font-size: 72px;
     }
   }
   @media (max-width: 1100px) {
