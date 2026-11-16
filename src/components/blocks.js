@@ -428,7 +428,11 @@ export const ProofStrip = () => (
         </div>
       </div>
       <ul>
-        <li>Podpredseda ADMA</li>
+        <li>
+          <a href={LINKS.adma} target="_blank" rel="noopener noreferrer">
+            Podpredseda ADMA
+          </a>
+        </li>
         <li>MBA v špecializácii Mastery in AI</li>
         <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
         <li>
