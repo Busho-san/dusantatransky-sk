@@ -124,7 +124,7 @@ const Hero = () => (
     <HeroText>
       <h3 className="eyebrow">Košice · Budapešť · online</h3>
       <h1 className="headlines">
-        Marketing. Kreativita. AI. <span role="img" aria-label="opica">🐒</span>
+        Marketing. Kreativita. AI. <span role="img" aria-label="opica" style={{ fontSize: "0.9em", lineHeight: 1 }}>🐒</span>
       </h1>
       <h3 className="subtitle">Beriem to osobne.</h3>
       <p className="lead">
