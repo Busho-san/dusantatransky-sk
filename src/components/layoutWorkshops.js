@@ -225,7 +225,7 @@ const LayoutWorkshops = () => (
     <Section id="kto-ho-vedie" tone="light">
       <h2>Kto vedie workshop</h2>
       <Leader>
-        <img src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
+        <img loading="lazy" src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
         <div>
         <p>
           MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.

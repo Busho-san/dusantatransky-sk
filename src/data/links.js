@@ -1,7 +1,7 @@
 // Link map z briefu. Všetky externé odkazy na jednom mieste.
 export const LINKS = {
   en: "https://dusantatransky.com/",
-  enWorkshops: "https://dusantatransky.com/workshops",
+  enWorkshops: "https://dusantatransky.com/workshops/",
   linkedin: "https://www.linkedin.com/in/dusantatransky/",
   substack: "https://marketingcircus.substack.com",
   emailWorkshop: "mailto:dusan@tatransky.sk?subject=AI%20workshop",

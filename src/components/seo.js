@@ -11,6 +11,7 @@ function SEO({ title, description, path, enUrl, jsonLd, noindex }) {
   const image = SITE_URL + "/og-image.png"
   const meta = [
     { name: "description", content: description },
+    { name: "author", content: "Dušan Tatranský" },
     { property: "og:title", content: title },
     { property: "og:description", content: description },
     { property: "og:type", content: "website" },

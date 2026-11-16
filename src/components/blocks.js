@@ -464,7 +464,7 @@ export const Contact = () => (
       <UnderLink href={LINKS.en} hrefLang="en" lang="en">
         English version
       </UnderLink>
-      <img className="hand_gif" src={hand} alt="" />
+      <img loading="lazy" className="hand_gif" src={hand} alt="" />
     </div>
   </ContactWrapper>
 )

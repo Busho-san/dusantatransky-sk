@@ -43,16 +43,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-142530935-1",
-        // Defines where to place the tracking script - `true` in the head and `false` in the body
-        head: false,
-        // Set Variation ID. 0 for original 1,2,3....
-        variationId: "0",
-      },
-    },
-    {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
         id: "GTM-5SRW448",

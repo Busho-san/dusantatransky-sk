@@ -170,7 +170,7 @@ const Workshopy = () => (
       Pre firmy ponúkam dva workshopy. Po slovensky, u vás alebo online. Na úrovni, akú potrebujete. Pracujeme na tom, čo váš tím aktuálne rieši a dokáže hneď využiť.
     </p>
     <SectionImage style={{ marginTop: 40 }}>
-      <img src={workshopy_home} alt="Dušan Tatranský na workshope" />
+      <img loading="lazy" src={workshopy_home} alt="Dušan Tatranský na workshope" />
     </SectionImage>
     <Rule>
       <h2 className="outline">AI v práci</h2>
@@ -218,7 +218,7 @@ const OMne = () => (
     <h3 className="eyebrow">O mne</h3>
     <h2>Tri roboty, jedna hlava.</h2>
     <SectionImage>
-      <img src={dusanstvo_omne} alt="Dušan Tatranský" />
+      <img loading="lazy" src={dusanstvo_omne} alt="Dušan Tatranský" />
     </SectionImage>
     <Rule>
       <h3>
