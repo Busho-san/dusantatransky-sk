@@ -509,7 +509,7 @@ export const Contact = () => (
         Workshop, prednáška alebo niečo, čo sa ťažko pomenúva. Napíšte mi.
       </p>
     </div>
-    <a className="footer_mail" href={LINKS.emailWorkshop}>
+    <a className="footer_mail" href={LINKS.email}>
       dusan@tatransky.sk
     </a>
     <div className="socials">

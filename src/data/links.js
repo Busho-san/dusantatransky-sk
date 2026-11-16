@@ -5,6 +5,7 @@ export const LINKS = {
   linkedin: "https://www.linkedin.com/in/dusantatransky/",
   substack: "https://marketingcircus.substack.com",
   emailWorkshop: "mailto:dusan@tatransky.sk?subject=AI%20workshop",
+  email: "mailto:dusan@tatransky.sk?subject=Spr%C3%A1va%20z%20webu",
   promiseo: "https://www.promiseo.sk",
   fatalRecall: "https://www.fatalrecall.com",
   destinion: "https://destinion.sk",
