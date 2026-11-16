@@ -75,4 +75,9 @@ git commit -q -m "Produkčný build z master ($SRC)" || echo "Žiadne zmeny vo v
 git push -q "$REPO_URL" cloudflare
 cd "$ROOT"
 rm -rf "$TMP"
-echo "Nasadené: build z $SRC je vo vetve cloudflare. Cloudflare ho zverejní do minúty."
+
+# Označ nasadenú verziu dátumom, aby sa k nej dalo vrátiť (git tag web-RRRR-MM-DD-HHMM)
+TAG="web-$(date +%Y-%m-%d-%H%M)"
+git tag -a "$TAG" -m "Nasadená verzia webu ($SRC)" HEAD
+git push -q "$REPO_URL" "$TAG"
+echo "Nasadené: build z $SRC je vo vetve cloudflare, verzia označená ako $TAG. Cloudflare ju zverejní do minúty."

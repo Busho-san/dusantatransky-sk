@@ -41,3 +41,14 @@ Anglická verzia je dusantatransky.com (repozitár Busho-san/dusantatransky-com)
 3. Over na https://www.dusantatransky.sk.
 
 Vetvu `cloudflare` needituj ručne.
+
+## Verzie a návrat k predošlej verzii
+
+- Každé nasadenie skript označí tagom `web-RRRR-MM-DD-HHMM` (zoznam: `git tag -l 'web-*'`).
+  Prvá verzia nového webu: `web-2026-11-16`.
+- **Rýchly návrat bez kódu:** Cloudflare → Workers & Pages → `dusantatransky-sk` → Deployments →
+  pri staršom nasadení „…“ → Rollback.
+- **Trvalý návrat cez kód:** zisti tag želanej verzie, potom
+  `git checkout <tag> -- src static gatsby-config.js gatsby-ssr.js`, commitni ako novú zmenu
+  („Návrat na verziu <tag>“), pushni do master a spusti `bash scripts/deploy.sh`.
+  História sa nemaže, aj tento návrat sa dá vrátiť.
