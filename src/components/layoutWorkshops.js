@@ -11,7 +11,6 @@ import {
   Buttons,
   Button,
   UnderLink,
-  ProofStrip,
   Contact,
 } from "./blocks"
 import { LINKS } from "../data/links"
@@ -66,61 +65,123 @@ const List = styled.ul`
   }
 `
 
-const Leader = styled.div`
+const StepsRow = styled.ol`
+  list-style: none;
   display: grid;
-  grid-template-columns: 34% 1fr;
-  gap: 40px;
-  align-items: start;
-  img {
-    max-height: 520px;
-    object-fit: cover;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin: 8px 0 48px;
+  counter-reset: step;
+  li {
+    border-top: 2px solid var(--black);
+    padding-top: 20px;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  li:before {
+    display: block;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 16px;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+  li.one:before {
+    background-image: url(${one});
+  }
+  li.two:before {
+    background-image: url(${two});
+  }
+  li.three:before {
+    background-image: url(${three});
   }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    gap: 24px;
-    img {
-      max-height: 420px;
-      object-position: 50% 20%;
+    gap: 20px;
+    li {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      align-items: center;
+      font-size: 18px;
+    }
+    li:before {
+      margin: 0;
     }
   }
 `
 
-const Steps = styled.ol`
-  list-style: none;
-  li {
-    position: relative;
-    padding: 14px 0 14px 84px;
-    font-size: 22px;
-    line-height: 1.4;
-    min-height: 84px;
-    &:before {
-      position: absolute;
-      left: 0;
-      top: 12px;
-      width: 60px;
-      height: 60px;
-      content: "";
-      background-repeat: no-repeat;
-      background-size: cover;
-    }
-    &.one:before {
-      background-image: url(${one});
-    }
-    &.two:before {
-      background-image: url(${two});
-    }
-    &.three:before {
-      background-image: url(${three});
-    }
+const PriceCard = styled.div`
+  background: var(--black);
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 40px;
+  flex-wrap: wrap;
+  && * {
+    color: var(--white);
+  }
+  h3 {
+    color: var(--orange) !important;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 460px;
+  }
+  && a {
+    color: var(--black);
   }
   @media (max-width: 600px) {
-    li {
-      padding-left: 68px;
-      font-size: 18px;
-      &:before {
-        width: 56px;
-        height: 56px;
-      }
+    padding: 24px;
+  }
+`
+
+const Leader = styled.div`
+  display: grid;
+  grid-template-columns: 36% 1fr;
+  gap: 48px;
+  align-items: center;
+  img {
+    max-height: 560px;
+    object-fit: cover;
+    object-position: 50% 20%;
+  }
+  h2 {
+    margin-bottom: 28px !important;
+  }
+  .stats {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 28px;
+  }
+  .stat b {
+    display: block;
+    font-family: "MyWebFont", sans-serif;
+    font-weight: normal;
+    font-size: 56px;
+    line-height: 1;
+    color: var(--orange);
+  }
+  .stat span {
+    font-weight: 900;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    img {
+      max-height: 420px;
     }
   }
 `
@@ -204,43 +265,52 @@ const LayoutWorkshops = () => (
 
     <Section id="ako-to-prebieha" tone="orange">
       <h2>Ako to prebieha</h2>
-      <Steps>
+      <StepsRow>
         <li className="one">Krátky hovor o vašom tíme a jeho práci.</li>
         <li className="two">Cvičenia prispôsobím vašim reálnym úlohám.</li>
         <li className="three">
           Workshop. Otvorené notebooky, skutočná práca pod mojím vedením.
         </li>
-      </Steps>
-      <Rule style={{ marginTop: 24 }}>
-        <h3>Cena</h3>
-        <BlokRight>
+      </StepsRow>
+      <PriceCard>
+        <div>
+          <h3>Cena</h3>
           <p>Pilotné ceny platia do februára 2027. Kto skôr napíše, ten skôr vie.</p>
-          <Buttons style={{ marginTop: 0 }}>
-            <Button href={LINKS.emailWorkshop}>Dohodnite si workshop →</Button>
-          </Buttons>
-        </BlokRight>
-      </Rule>
+        </div>
+        <Button href={LINKS.emailWorkshop}>Dohodnite si workshop →</Button>
+      </PriceCard>
     </Section>
 
     <Section id="kto-ho-vedie" tone="light">
-      <h2>Kto vedie workshop</h2>
       <Leader>
-        <img loading="lazy" src={workshopy_portret} alt="Dušan Tatranský v oranžových okuliaroch" />
+        <img
+          loading="lazy"
+          src={workshopy_portret}
+          alt="Dušan Tatranský v oranžových okuliaroch"
+        />
         <div>
-        <p>
-          MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.
-        </p>
-        <UnderLink
-          href={LINKS.linkedin}
-          target="_blank"
-          rel="me noopener noreferrer"
-        >
-          Celé moje CV na LinkedIne →
-        </UnderLink>
+          <h2>Kto vedie workshop</h2>
+          <div className="stats">
+            <div className="stat">
+              <b>15+</b>
+              <span>rokov</span>
+            </div>
+            <div className="stat">
+              <b>100+</b>
+              <span>značiek</span>
+            </div>
+          </div>
+          <p>MBA so špecializáciou na AI mám od roku 2026. S pracovnou skupinou ADMA sme navrhli predmet o AI v marketingovej komunikácii pre Univerzitu Komenského. Na festivale UMELINA sedím v zakladajúcej porote a som odborným garantom kategórie Reklama a branded content.</p>
+          <UnderLink
+            href={LINKS.linkedin}
+            target="_blank"
+            rel="me noopener noreferrer"
+          >
+            Celé moje CV na LinkedIne →
+          </UnderLink>
         </div>
       </Leader>
     </Section>
-    <ProofStrip />
     <Contact />
   </PageShell>
 )

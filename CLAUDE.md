@@ -52,3 +52,4 @@ Vetvu `cloudflare` needituj ručne.
   `git checkout <tag> -- src static gatsby-config.js gatsby-ssr.js`, commitni ako novú zmenu
   („Návrat na verziu <tag>“), pushni do master a spusti `bash scripts/deploy.sh`.
   História sa nemaže, aj tento návrat sa dá vrátiť.
+- Web nepoužíva cookies ani tracking (GTM, Facebook Pixel a Google Analytics sú odstránené, bez cookie lišty).

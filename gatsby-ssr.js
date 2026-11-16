@@ -1,14 +1,3 @@
 /**
- * Gatsby SSR APIs.
- *
- * GTM plugin vkladá na začiatok <body> <noscript><iframe ...ns.html?id=GTM-...>.
- * Nástroje, ktoré čítajú text stránky, ho vidia ako text. Odstraňujeme ho,
- * hlavný GTM skript v <head> ostáva.
+ * Gatsby SSR APIs. (Analytika a GTM sú vypnuté: web nepoužíva cookies.)
  */
-exports.onPreRenderHTML = ({ getPreBodyComponents, replacePreBodyComponents }) => {
-  replacePreBodyComponents(
-    getPreBodyComponents().filter(
-      component => !(component && component.key === "plugin-google-tagmanager")
-    )
-  )
-}
