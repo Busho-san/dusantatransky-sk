@@ -318,69 +318,126 @@ export const UnderLink = styled.a`
 
 /* ---------- pás dôkazov ---------- */
 
+// Vľavo dve veľké čísla, vpravo štyri funkcie v mriežke 2 × 2.
 const Strip = styled.div`
   background: var(--black);
-  padding: 28px 50px;
-  ul {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 12px 0;
+  padding: 56px 50px;
+  && * {
+    color: var(--white);
   }
-  li {
+  .inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 40px 72px;
+    align-items: center;
+  }
+  .stats {
+    display: flex;
+    gap: 40px;
+  }
+  .stat b {
+    display: block;
+    font-family: "MyWebFont", sans-serif;
+    font-weight: normal;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--orange) !important;
+  }
+  .stat span {
+    display: block;
+    margin-top: 8px;
     font-weight: 900;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: var(--white);
+  }
+  .sep {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+  ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 40px;
+  }
+  li {
+    border-top: 1px solid #3a3a3a;
+    padding: 16px 0 16px 22px;
+    position: relative;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.4;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 24px;
+      width: 8px;
+      height: 8px;
+      background: var(--orange);
+    }
     a {
-      color: var(--white);
       font-size: inherit;
-      letter-spacing: inherit;
+      font-weight: inherit;
+      background-image: linear-gradient(var(--orange), var(--orange));
+      background-repeat: no-repeat;
+      background-size: 100% 2px;
+      background-position: 0 100%;
     }
     a:hover {
-      color: var(--orange);
-    }
-    &:not(:last-child):after {
-      content: "·";
-      color: var(--orange);
-      margin: 0 18px;
+      color: var(--orange) !important;
     }
   }
-  @media (max-width: 700px) {
-    padding: 24px 25px;
+  @media (max-width: 1000px) {
+    padding: 44px 25px;
+    .inner {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .stat b {
+      font-size: 56px;
+    }
     ul {
-      flex-direction: column;
-      align-items: flex-start;
+      grid-template-columns: 1fr;
     }
     li {
-      font-size: 12px;
-      letter-spacing: 2px;
-      &:not(:last-child):after {
-        content: none;
-      }
-      &:before {
-        content: "· ";
-        color: var(--orange);
-      }
+      font-size: 16px;
     }
   }
 `
 
 export const ProofStrip = () => (
   <Strip data-tone="dark">
-    <ul>
-      <li>15+ rokov · 100+ značiek</li>
-      <li>Podpredseda ADMA</li>
-      <li>MBA v špecializácii Mastery in AI</li>
-      <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
-      <li>
-        <a href={LINKS.umelina} target="_blank" rel="noopener noreferrer">
-          Zakladajúci porotca festivalu UMELINA
-        </a>
-      </li>
-    </ul>
+    <div className="inner">
+      <div className="stats">
+        <div className="stat">
+          <b>15+</b>
+          <span>rokov</span>
+        </div>
+        <span className="sep"> · </span>
+        <div className="stat">
+          <b>100+</b>
+          <span>značiek</span>
+        </div>
+      </div>
+      <ul>
+        <li>Podpredseda ADMA</li>
+        <li>MBA v špecializácii Mastery in AI</li>
+        <li>Spoluautor predmetu o AI na Univerzite Komenského</li>
+        <li>
+          <a href={LINKS.umelina} target="_blank" rel="noopener noreferrer">
+            Zakladajúci porotca festivalu UMELINA
+          </a>
+        </li>
+      </ul>
+    </div>
   </Strip>
 )
 
